@@ -6,7 +6,7 @@
 - binary safe，即字符串中间允许出现 \0
 - 搭配了丰富的 API ，如 sdsnew(), sdsempty(), sdsdup() 等 
 
-`sds` `markdown`是 `char*` 的别名，真正存储了字符串长度、分配空间大小信息的是` sdshdr（sdsheader）`。`sds` 实际是指向 `sdshdr`最后一个成员 `buf`
+`sds` 是 `char*` 的别名，真正存储了字符串长度、分配空间大小信息的是` sdshdr（sdsheader）`。`sds` 实际是指向 `sdshdr`最后一个成员 `buf`
 
 `redis 3.2.3` 非常注重节省空间，根据字符串长度不同，`sdshdr` 分为五种类型，sdshdr5 用来存储5个字节可以存储的长度的字符串，最大长度为 2^5 - 1 个字符。
 同理 sdshdr8 能够存储最多 2^8 - 1 个字符，以此类推。当字符串长度超出当前 `header` 所能表示的最大长度时，会自动升级 `header` 。
