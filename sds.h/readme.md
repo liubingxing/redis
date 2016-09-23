@@ -13,7 +13,7 @@
  
 ###sds内存结构：
 下图是两个sds字符串的内存结构，s1使用sdshdr8类型的header，s2使用sdshdr16类型的header。有如下特点：
-
+![image](https://github.com/liubingxing/redis/raw/master/sds.h/redis_sds_structure.png)
 
 - sds的字符指针（s1和s2）是指向数据开始的位置，而header位于内存地址较低的方向，代码中`flags = s[-1]` 即是向低地址偏移1个字节取得flags字段。
 
