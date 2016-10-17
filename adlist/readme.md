@@ -6,6 +6,32 @@ typedef struct list{
    void (*free)(void *ptr);  //释放ptr值函数    
    int (*match)(void *ptr，void *key); //匹配ptr和key内容的函数    
 }list;  
+
+##数据结构
+typedef struct listNode {
+
+    struct listNode *prev;
+    
+    struct listNode *next;
+    
+    void *value;
+    
+} listNode;
+
+typedef struct list {
+    listNode *head;
+    
+    listNode *tail;
+    
+    void *(*dup)(void *ptr);
+    
+    void (*free)(void *ptr);
+    
+    int (*match)(void *ptr, void *key);
+    
+    unsigned long len;
+} list;
+
 其中dup和free，match函数可用于自定义函数；
 在adlist.c中有类似如下代码段：
 if(list->free) list-free(node->value);
