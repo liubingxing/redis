@@ -1,6 +1,6 @@
 
 ##数据结构
-
+>
 ```c
 typedef struct listNode {
     struct listNode *prev;
@@ -10,7 +10,7 @@ typedef struct listNode {
 ```
 
 listNode是最基本的结构, 表示链表中的一个结点。 结点有向前(next)和向后 (prev)两个指针, 链表是双向链表。保存的值是void * 类型。
-
+>
 ```c
 typedef struct list {
     listNode *head;
