@@ -1,4 +1,3 @@
-
 typedef struct list{    
    listNode *head;   //头节点    
    listNode *tail;   //尾节点    
