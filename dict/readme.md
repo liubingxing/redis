@@ -298,3 +298,4 @@ distScan函数是用来遍历字典的，但是在遍历的过程中，redis因�
 在Redis中，字典的哈希表长度始终为2的n次方。因此m0始终是一个低n位全为1，其余为全为0的数。整个计算过程，都是在v的低n位数中进行的，比如长度为16的哈希表，则n=4，因此v是从0到15这几个数之间的转换。下面解释一下计算过程：
 
 第一步：v |= ~m0;                 //用于保留v的低n位数，其余位全置为1：
+![image](https://github.com/liubingxing/redis/raw/master/dict/dictScan-1.png)
