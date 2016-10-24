@@ -52,7 +52,7 @@ Redis的字典使用哈希表作为底层实现，一个哈希表里面可以有
 ```
 ### 字典与哈希表的关系图
 
-![image](https://github.com/liubingxing/redis/raw/master/dict/distscan-1.png)
+![image](https://github.com/liubingxing/redis/raw/master/dict/1.png)
 
 ## 整体流程
 
